@@ -17,6 +17,6 @@ import javax.validation.Valid;
 public interface IUserProfileManager {
 
     @PostMapping("/createprofile")
-    ResponseEntity<Boolean> createProfile(@RequestBody @Valid CreateProfileRequestDto dto);
+    ResponseEntity<String> createProfile(@RequestBody @Valid CreateProfileRequestDto dto);
 
 }

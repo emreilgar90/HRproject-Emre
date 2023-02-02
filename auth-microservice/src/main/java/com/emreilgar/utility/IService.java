@@ -1,7 +1,7 @@
 package com.emreilgar.utility;
 
 
-import java.util.List;
+
 import java.util.Optional;
 public interface IService<T,ID> {
     T save(T t);
@@ -9,7 +9,7 @@ public interface IService<T,ID> {
     T update(T t);
     void delete(T t);
     void deleteById(ID id);
-    List<T> findAll();
+    Iterable<T> findAll();
     Optional<T> findById(ID id);
 
 }

@@ -4,4 +4,6 @@ include 'userprofile-microservice'
 include 'config-server'
 include 'api-gateway-microservice'
 include 'config-server'
+include 'company-microservice'
+include 'company-microservice'
 

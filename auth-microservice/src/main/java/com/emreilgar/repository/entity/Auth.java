@@ -1,21 +1,21 @@
 package com.emreilgar.repository.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+import nonapi.io.github.classgraph.json.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Builder
-@Table(name = "tblauth")
-@Entity
-public class Auth {
+@SuperBuilder
+@Document
+public class Auth {   //postgresql
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String username;
     String password;
