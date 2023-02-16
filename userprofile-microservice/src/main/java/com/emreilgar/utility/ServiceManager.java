@@ -1,6 +1,7 @@
 package com.emreilgar.utility;
 
 
+import com.emreilgar.repository.IUserProfileRepository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
@@ -9,9 +10,9 @@ import java.util.Optional;
 public class ServiceManager<T,ID> implements IService<T,ID> {
 
     private final MongoRepository<T,ID> repository;
-    public ServiceManager(MongoRepository<T,ID> repository){
+    public ServiceManager(IUserProfileRepository repository, MongoRepository<T, ID> repository1){
 
-        this.repository = repository;
+        this.repository = repository1;
     }
     @Override
     public T save(T t) {

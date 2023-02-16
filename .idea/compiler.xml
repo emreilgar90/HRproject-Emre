@@ -10,10 +10,11 @@
         </processorPath>
         <module name="HRproject-Emre.main" />
         <module name="HRproject-Emre.auth-microservice.main" />
-        <module name="HRproject-Emre.api-gateway-microservice.main" />
-        <module name="HRproject-Emre.company-microservice.main" />
         <module name="HRproject-Emre.userprofile-microservice.main" />
         <module name="HRproject-Emre.config-server.main" />
+        <module name="HRproject-Emre.api-gateway-microservice.main" />
+        <module name="HRproject-Emre.company-microservice.main" />
+        <module name="HRproject-Emre.mail-service.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />

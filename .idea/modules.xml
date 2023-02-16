@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/auth-microservice/HRproject-Emre.auth-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/auth-microservice/HRproject-Emre.auth-microservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server/HRproject-Emre.config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server/HRproject-Emre.config-server.main.iml" />
+    </modules>
+  </component>
+</project>

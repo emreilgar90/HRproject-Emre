@@ -2,7 +2,7 @@ package com.emreilgar.constansts;
 
 public class RestApi {
 
-
+     //controller da kullanıyoruz  !
         public static final String VERSION="/v1";
         public static final String DEV = "/dev";
 

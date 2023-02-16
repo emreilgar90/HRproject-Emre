@@ -6,4 +6,5 @@ include 'api-gateway-microservice'
 include 'config-server'
 include 'company-microservice'
 include 'company-microservice'
+include 'mail-service'
 

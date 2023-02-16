@@ -1,0 +1,28 @@
+server:
+  port: 9090
+spring:
+  security:
+    user:
+      name: java4
+      password: root
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java4
+    password: root
+  data:
+    mongodb:
+      host: localhost
+      port: 27000
+      username: "HRProject-Emre"
+      password: "123456789"
+      database: Java4AuthDb
+myapplication:
+  auth:
+    ip: localhost
+    port: 9091
+  user:
+    ip: localhost
+    port: 9090
+    feignurl: http://localhost:9091/v1/dev/userprofile
+

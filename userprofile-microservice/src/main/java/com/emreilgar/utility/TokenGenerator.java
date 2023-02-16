@@ -1,7 +1,8 @@
 package com.emreilgar.utility;
 
-import com.emreilgar.exception.AuthMicroserviceException;
+
 import com.emreilgar.exception.ErrorType;
+import com.emreilgar.exception.UserProfileMicroserviceException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +17,7 @@ public class TokenGenerator {
             String userid = token.split(":")[1];
             return Long.parseLong(userid);
         }catch (Exception e){
-            throw new AuthMicroserviceException(ErrorType.INTERNAL_ERROR);
+            throw new UserProfileMicroserviceException(ErrorType.INTERNAL_ERROR);
         }
     }
 }

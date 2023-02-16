@@ -15,11 +15,11 @@ import javax.validation.constraints.NotNull;
 @Builder    //lombok anatasyonlarını ekledik
 public class CreateProfileRequestDto {
     @NotNull
-    Long authid;
+    private Long authid;
     @NotBlank
-    String username;
+    private String username;
     @NotBlank
     @Email
-    String email;
-    String token;
+    private String email;
+    private String token;
 }

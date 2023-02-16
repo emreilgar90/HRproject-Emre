@@ -1,0 +1,31 @@
+# DİKKAT!!!!! Sistem Ortam Deişkenlerine işlenen bilgiler, IDE yeniden başlatılana kadar aktif olmaz.
+server:
+  port: 9090
+spring:
+  security:
+    user:
+      name: java4
+      password: root
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java4
+    password: root
+  data:
+    mongodb:
+      host: localhost
+      port: 27000
+      username: "HRProject-Emre"
+      password: "123456789"
+      database: Java4CompanyDb
+myapplication:
+  company:
+    ip: localhost
+    port: 9092
+  user:
+    ip: localhost
+    port: 9090
+    feignurl: http://localhost/v1/dev/userprofile
+
+buuygulama:
+  birdeger: "birdeğer"

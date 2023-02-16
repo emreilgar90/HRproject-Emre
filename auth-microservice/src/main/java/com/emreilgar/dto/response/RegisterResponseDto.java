@@ -11,13 +11,15 @@ import lombok.NoArgsConstructor;
 @Builder
 public class RegisterResponseDto {
 
-    Long authid;
-    String content;
-    String email;
-    String password;
-    String repassword;
-    String username;
-    Integer registerstate;
+    private Long authid;
+    private String content; //içerik demek 
+    private String email;
+    private String password;
+    private String repassword;
+    private String username;
+    private Integer registerstate;
+
+    //buraya mail service ile aktivasyon kodu göndermem lazım.
 
 
 

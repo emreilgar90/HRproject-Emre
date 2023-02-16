@@ -3,6 +3,7 @@ package com.emreilgar.service;
 
 import com.emreilgar.dto.request.CreateCompanyRequestDto;
 import com.emreilgar.dto.response.CompanyGetAllResponseDto;
+import com.emreilgar.manager.IUserProfileCompanyManagerClient;
 import com.emreilgar.mapper.ICompanyMapper;
 import com.emreilgar.repository.ICompanyRepository;
 import com.emreilgar.repository.entity.Company;
@@ -16,12 +17,13 @@ import java.util.List;
 public class CompanyService extends ServiceManager<Company,String> {
     private final ICompanyRepository repository;
 
-    public CompanyService(ICompanyRepository repository) {
+    private final IUserProfileCompanyManagerClient iUserProfileCompanyManagerClient;
+
+    public CompanyService(ICompanyRepository repository, IUserProfileCompanyManagerClient userProfileCompanyManagerClient) {
         super(repository);
         this.repository = repository;
+        iUserProfileCompanyManagerClient = userProfileCompanyManagerClient;
     }
-
-
 
     //tüm şirketleri listeleyen metot
     public List<CompanyGetAllResponseDto> findAll1() {
@@ -29,7 +31,6 @@ public class CompanyService extends ServiceManager<Company,String> {
 
         return ICompanyMapper.INSTANCE.fromCompany(companies);
     }
-
 
     public Boolean createCompany(CreateCompanyRequestDto dto) {
         Company company= ICompanyMapper.INSTANCE.fromCreateCompanyRequestDto(dto);

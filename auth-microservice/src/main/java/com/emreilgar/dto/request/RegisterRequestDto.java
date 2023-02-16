@@ -14,24 +14,24 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RegisterRequestDto {
+public class RegisterRequestDto { //dışarıdan alacağımız veriler.
     @NotBlank(message = "Kullanıcı adı boş geçilemez")
     @Size(min=3,max=32)
     /**
      * BüyükHarf olmamalı, küçük harf olmalı, rakam içerebilir, . nokta olabilir
      * diğer tüm özel karakterler olamaz.
      */
-    String username;
+    private String username;
     @NotBlank(message = "Kullanıcı adı boş geçilemez")
     @Size(min=8,max=64)
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*!])(?=\\S+$).{8,}$" )
-    String password;
+    private String password;
     @NotBlank(message = "Kullanıcı adı boş geçilemez")
     @Size(min=8,max=64)
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*!])(?=\\S+$).{8,}$" )
-    String repassword;
+    private String repassword;
     @Email(message = "Lütfen geçerli bir e-mail adresi giriniz.")
-    String email;
+    private String email;
 
 
 }

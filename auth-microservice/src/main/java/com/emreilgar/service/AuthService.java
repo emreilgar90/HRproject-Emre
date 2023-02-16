@@ -37,20 +37,21 @@ public class AuthService extends ServiceManager<Auth,Long> {
         Optional<Auth> auth =repository.findOptionalByEmailAndPassword(dto.getPassword(),dto.getEmail());
         if (auth.isEmpty())
             throw new ArithmeticException(ErrorType.LOGIN_ERROR.getMessage());
-        Optional<String>token = jwtTokenManager.createToken(auth.get().getId());
+        Optional<String>token = jwtTokenManager.createToken(auth.get().getId());// yukarıda ki hatayı dönmediyse token oluşturur.
         if (auth.isEmpty())
             throw new AuthMicroserviceException(ErrorType.JWT_TOKEN_CREATE_ERROR);
         return token.get();
     }
 
 
-    public RegisterResponseDto save(@Valid RegisterRequestDto dto) {
+    public RegisterResponseDto register(@Valid RegisterRequestDto dto) {
         if (!dto.getPassword().equals(dto.getRepassword()))
             throw new AuthMicroserviceException(ErrorType.REGISTER_REPASSWORD_ERROR);
         if (repository.findOptionalByUsername(dto.getUsername()).isPresent())
+                      //findOptinalByUserName metodu IAuthRepository de ki metotlarda oluşturduk.
             throw new AuthMicroserviceException(ErrorType.REGISTER_KULLANICIADI_KAYITLI);
 
-        Auth auth = save(IAuthMapper.INSTANCE.fromRegisterRequestDto(dto));
+        Auth auth = save(IAuthMapper.INSTANCE.fromRegisterRequestDto(dto));  //mapper da yapmıştık !
         userProfileManager.createProfile(CreateProfileRequestDto.builder()
                 .token("")
                 .authid(auth.getId())
